@@ -1,4 +1,5 @@
 <script setup ="ts">
+const { localeProperties  } = useI18n()
 const links = [
   { name: "Open roles", href: "#" },
   { name: "Internship program", href: "#" },
@@ -11,6 +12,8 @@ const stats = [
   { name: "Hours per week", value: "40" },
   { name: "Paid time off", value: "Unlimited" },
 ];
+console.log(useI18n().localeProperties.value)
+console.log(useI18n().locale.value)
 
 
 </script>
@@ -80,7 +83,7 @@ const stats = [
         "
       />
     </div>
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8" :dir="localeProperties.dir">
       <div class="mx-auto max-w-2xl lg:mx-0">
         <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">
           {{ $t("message") }}
